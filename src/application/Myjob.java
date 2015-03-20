@@ -32,19 +32,19 @@ class Myjob implements Runnable {
         String name = Thread.currentThread().getName();
         
         if (compte.getSolde() >= montant) {
-            System.out.println(name + " veut retirer de la tune pour "+ compte.getSolde());
+            System.out.println(name + " veut retirer de la tune alors qu'il reste : "+ compte.getSolde());
             
             try {
-                System.out.println(name + " s'endor zzzz");
+                System.out.println(name + " s'endort");
                 Thread.sleep(500);
             } catch (InterruptedException e) {
             }
             System.out.println(name + " vient de se reveiller");
             compte.retirerArgent(montant);
-            System.out.println(name + " termine le retrait pour " + montant);
+            System.out.println(name + " termine le retrait pour " + montant + " il reste " + compte.getSolde());
             
         } else {
-            System.out.println("no tune pour " + name);
+            System.out.println("no tune pour " + name + " compte à " + compte.getSolde());
         }
         
     }
